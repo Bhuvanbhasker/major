@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Language Translation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>Language Translation</h1>
+
+  <form id="translation-form" action="/translate" method="post">
+    <label for="text">Enter Text:</label>
+    <textarea id="text" name="text" rows="4" placeholder="Type your text here"></textarea>
+
+    <label for="language">Select Language:</label>
+    <select id="language" name="language">
+      <option value="en">English</option>
+      <option value="es">Spanish</option>
+      <option value="fr">French</option>
+      <!-- Add more language options as needed -->
+    </select>
+
+    <button type="submit">Translate</button>
+  </form>
+
+  {% if original_text %}
+    <div id="result">
+      <p><strong>Original Text:</strong> {{ original_text }}</p>
+      <p><strong>Translated Text:</strong> {{ translated_text }}</p>
+    </div>
+  {% endif %}
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="scripts.js"></script>
+
+</body>
+</html>
